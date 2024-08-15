@@ -1,0 +1,208 @@
+Index: src/main/java/com/ninjas/gig/service/ProductService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ninjas.gig.service;\r\n\r\nimport com.ninjas.gig.model.Product;\r\nimport com.ninjas.gig.repository.ProductsRepository;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport java.util.List;\r\n\r\n@Service\r\npublic class ProductService {\r\n    @Autowired\r\n\r\n    private ProductsRepository productRepository;\r\n    public record ProductRequest(String name, double price, String brand) {}\r\n\r\n    //ResponseEntity or Product repository\r\n\r\n//    public ResponseEntity<?> addProduct(ProductRequest productRequest) {\r\n//        Product newProduct = new Product(productRequest.name, productRequest.price, productRequest.brand);\r\n//        productRepository.save(newProduct);\r\n//        return ResponseEntity.ok(productRepository.findAll());\r\n//    }\r\n    public List<Product> addProduct(ProductRequest productRequest) {\r\n        Product newProduct = new Product(productRequest.name, productRequest.price, productRequest.brand);\r\n        productRepository.save(newProduct);\r\n        return productRepository.findAll();\r\n    }\r\n\r\n    public List<Product> displayAll() {\r\n        return productRepository.findAll();\r\n    }\r\n\r\n    public Product updatePrice(Long id, double newPrice) {\r\n        Product product = productRepository.findById(id)\r\n                .orElseThrow(() -> new RuntimeException(\"Product not found!\"));\r\n        product.setPrice(newPrice);\r\n        return productRepository.save(product);\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ninjas/gig/service/ProductService.java b/src/main/java/com/ninjas/gig/service/ProductService.java
+--- a/src/main/java/com/ninjas/gig/service/ProductService.java	
++++ b/src/main/java/com/ninjas/gig/service/ProductService.java	
+@@ -3,42 +3,42 @@
+ import com.ninjas.gig.model.Product;
+ import com.ninjas.gig.repository.ProductsRepository;
+ import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.http.ResponseEntity;
+ import org.springframework.stereotype.Service;
+ 
++import java.util.ArrayList;
+ import java.util.List;
++import java.util.Optional;
+ 
+ @Service
+ public class ProductService {
+     @Autowired
+-
+-    private ProductsRepository productRepository;
+-    public record ProductRequest(String name, double price, String brand) {}
++    private ProductsRepository productsRepository;
+ 
+-    //ResponseEntity or Product repository
++    public Product addProduct(Product product){
++        return productsRepository.save(product);
++    }
+ 
+-//    public ResponseEntity<?> addProduct(ProductRequest productRequest) {
+-//        Product newProduct = new Product(productRequest.name, productRequest.price, productRequest.brand);
+-//        productRepository.save(newProduct);
+-//        return ResponseEntity.ok(productRepository.findAll());
+-//    }
+-    public List<Product> addProduct(ProductRequest productRequest) {
+-        Product newProduct = new Product(productRequest.name, productRequest.price, productRequest.brand);
+-        productRepository.save(newProduct);
+-        return productRepository.findAll();
++    public List<Product> getAllProducts() {
++        return productsRepository.findAll();
+     }
+ 
+-    public List<Product> displayAll() {
+-        return productRepository.findAll();
++    public void deleteProduct(Long id){
++        productsRepository.deleteById(id);
+     }
+ 
+-    public Product updatePrice(Long id, double newPrice) {
+-        Product product = productRepository.findById(id)
++    public Product updateProductPrice(Long id, double newPrice) {
++        Product product = productsRepository.findById(id)
+                 .orElseThrow(() -> new RuntimeException("Product not found!"));
+         product.setPrice(newPrice);
+-        return productRepository.save(product);
++        return productsRepository.save(product);
+     }
+ 
++    public List<Product> filterByCategory(String category) {
++        return productsRepository.findByCategory(category);
++    }
+ 
++    public List<Product> findByName(String name){
++        return productsRepository.findByNameContainingIgnoreCase(name);
++    }
+ 
+ }
+Index: src/main/java/com/ninjas/gig/model/Product.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ninjas.gig.model;\r\n\r\nimport jakarta.persistence.*;\r\nimport lombok.Data;\r\n\r\n@Data\r\n@Entity\r\npublic class Product {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    public Long id;\r\n    public String name;\r\n    public double price;\r\n    public String brand;\r\n\r\n    public Product() {}\r\n\r\n    public Product(String name, double price, String brand) {\r\n        this.name = name;\r\n        this.price = price;\r\n        this.brand = brand;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ninjas/gig/model/Product.java b/src/main/java/com/ninjas/gig/model/Product.java
+--- a/src/main/java/com/ninjas/gig/model/Product.java	
++++ b/src/main/java/com/ninjas/gig/model/Product.java	
+@@ -12,12 +12,16 @@
+     public String name;
+     public double price;
+     public String brand;
++    public String category;
+ 
+     public Product() {}
+ 
+-    public Product(String name, double price, String brand) {
++    public Product(String name, double price, String brand, String category) {
+         this.name = name;
+         this.price = price;
+         this.brand = brand;
++        this.category = category;
+     }
++
++
+ }
+Index: src/main/java/com/ninjas/gig/repository/ProductsRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ninjas.gig.repository;\r\n\r\nimport com.ninjas.gig.model.Product;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\n\r\npublic interface ProductsRepository extends JpaRepository<Product, Long> {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ninjas/gig/repository/ProductsRepository.java b/src/main/java/com/ninjas/gig/repository/ProductsRepository.java
+--- a/src/main/java/com/ninjas/gig/repository/ProductsRepository.java	
++++ b/src/main/java/com/ninjas/gig/repository/ProductsRepository.java	
+@@ -2,6 +2,26 @@
+ 
+ import com.ninjas.gig.model.Product;
+ import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.stereotype.Repository;
++
++import java.util.List;
++import java.util.Optional;
++import java.util.regex.Pattern;
++import java.util.stream.Collectors;
+ 
+ public interface ProductsRepository extends JpaRepository<Product, Long> {
++    List<Product> findByCategory(String category);
++
++
++
++    Optional<Product> findByName(String name);
++
++    default List<Product> findByNameContainingIgnoreCase(String name){
++        String pattern = ".*" + name.replaceAll("\\s+", ".*") + ".*";
++        Pattern regex = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
++        return findAll().stream()
++                .filter(product -> regex.matcher(product.getName()).matches())
++                .collect(Collectors.toList());
++    }
+ }
++
+Index: src/main/java/com/ninjas/gig/controller/ProductsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ninjas.gig.controller;\r\n\r\nimport com.ninjas.gig.service.ProductService;\r\nimport com.ninjas.gig.repository.ProductsRepository;\r\nimport com.ninjas.gig.model.Product;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\nimport java.util.List;\r\n\r\n@RestController\r\npublic class ProductsController {\r\n    @Autowired\r\n    private ProductsRepository repository;\r\n    @Autowired\r\n    private ProductService productService;\r\n\r\n    public ProductsController(ProductsRepository repository) {\r\n        this.repository = repository;\r\n    }\r\n\r\n    @PostMapping(\"/\")\r\n    public List<Product> addProduct(@RequestBody ProductService.ProductRequest productRequest) {\r\n        return productService.addProduct(productRequest);\r\n\r\n    }\r\n\r\n    @GetMapping(\"/\")\r\n    public List<Product> displayAllProducts() {\r\n        return productService.displayAll();\r\n    }\r\n\r\n    // dependency injection and dependency inversion -> what is that and what it has to do with spring beans\r\n\r\n    @PutMapping(\"/products/{id}/price\")\r\n    public Product updateProductPrice(@PathVariable Long id, @RequestParam double price) {\r\n        return productService.updatePrice(id, price);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ninjas/gig/controller/ProductsController.java b/src/main/java/com/ninjas/gig/controller/ProductsController.java
+--- a/src/main/java/com/ninjas/gig/controller/ProductsController.java	
++++ b/src/main/java/com/ninjas/gig/controller/ProductsController.java	
+@@ -4,36 +4,49 @@
+ import com.ninjas.gig.repository.ProductsRepository;
+ import com.ninjas.gig.model.Product;
+ import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.HttpStatusCode;
++import org.springframework.http.ResponseEntity;
+ import org.springframework.web.bind.annotation.*;
+ 
++import java.util.Collections;
+ import java.util.List;
++import java.util.Optional;
+ 
+ @RestController
+ public class ProductsController {
+     @Autowired
+-    private ProductsRepository repository;
+-    @Autowired
+     private ProductService productService;
+ 
+-    public ProductsController(ProductsRepository repository) {
+-        this.repository = repository;
+-    }
+-
+     @PostMapping("/")
+-    public List<Product> addProduct(@RequestBody ProductService.ProductRequest productRequest) {
+-        return productService.addProduct(productRequest);
++    public Product addProduct(@RequestBody Product product) {
++        return productService.addProduct(product);
+ 
+     }
++
++
+ 
+     @GetMapping("/")
+-    public List<Product> displayAllProducts() {
+-        return productService.displayAll();
++    public List<Product> getAllProducts() {
++        return productService.getAllProducts();
+     }
++
+ 
+     // dependency injection and dependency inversion -> what is that and what it has to do with spring beans
+ 
+     @PutMapping("/products/{id}/price")
+     public Product updateProductPrice(@PathVariable Long id, @RequestParam double price) {
+-        return productService.updatePrice(id, price);
++        return productService.updateProductPrice(id, price);
++    }
++
++    @GetMapping("/{category}")
++    public List<Product> byCategory(@PathVariable String category) {
++        return productService.filterByCategory(category);
++    }
++
++    @GetMapping("/product/search")
++    public List<Product> searchByName(@RequestBody String name){
++        List<Product> products = productService.findByName(name);
++        return products;
+     }
+ }

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7e068807-4750-43cf-8fd2-b5c6ec5060c1" name="Changes" comment="Orders changes" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2dxLcCGNmbCX4XEzxiskhq56tnI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GigApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Hristo/IdeaProjects/test",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ninjas.gig.dto" />
+      <recent name="com.ninjas.gig.repository" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e068807-4750-43cf-8fd2-b5c6ec5060c1" name="Changes" comment="" />
+      <created>1710944861413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710944861413</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Product related files">
+      <option name="closed" value="true" />
+      <created>1711315821688</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711315821688</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Entity package - created tables in DB">
+      <option name="closed" value="true" />
+      <created>1711833446837</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711833446837</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Entity package - edited tables in DB">
+      <option name="closed" value="true" />
+      <created>1711975679942</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711975679942</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Entity package - edited tables in DB">
+      <option name="closed" value="true" />
+      <created>1712092952837</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712092952837</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Entity package - edited tables in DB, new methods in Users, Products, Orders.">
+      <option name="closed" value="true" />
+      <created>1712177630735</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712177630735</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Entity package - edited tables in DB, new methods Orders.">
+      <option name="closed" value="true" />
+      <created>1712429681694</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712429681694</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Entity package - edited tables in DB, edited methods in Orders and Products.">
+      <option name="closed" value="true" />
+      <created>1712755162697</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712755162697</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Entity package - edited tables in DB">
+      <option name="closed" value="true" />
+      <created>1712931328405</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712931328406</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Entity package - edited tables in DB">
+      <option name="closed" value="true" />
+      <created>1712931929238</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712931929238</updated>
+    </task>
+    <task id="LOCAL-00010" summary="new Product methods">
+      <option name="closed" value="true" />
+      <created>1713019145331</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1713019145331</updated>
+    </task>
+    <task id="LOCAL-00011" summary="new Orders methods">
+      <option name="closed" value="true" />
+      <created>1713099323055</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713099323055</updated>
+    </task>
+    <task id="LOCAL-00012" summary="new Product method (setDiscount), edited Order method (&quot;/revenue&quot;)">
+      <option name="closed" value="true" />
+      <created>1713134520747</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713134520747</updated>
+    </task>
+    <task id="LOCAL-00013" summary="new Product method (setDiscount), edited Order method (&quot;/revenue&quot;)">
+      <option name="closed" value="true" />
+      <created>1713294889048</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1713294889048</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Orders changes">
+      <option name="closed" value="true" />
+      <created>1713299351126</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713299351126</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Orders changes">
+      <option name="closed" value="true" />
+      <created>1713441085068</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713441085068</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Product related files" />
+    <MESSAGE value="Entity package - created tables in DB" />
+    <MESSAGE value="Entity package - edited tables in DB, new methods in Users, Products, Orders." />
+    <MESSAGE value="Entity package - edited tables in DB, new methods Orders." />
+    <MESSAGE value="Entity package - edited tables in DB, edited methods in Orders and Products." />
+    <MESSAGE value="Entity package - edited tables in DB" />
+    <MESSAGE value="new Product methods" />
+    <MESSAGE value="new Orders methods" />
+    <MESSAGE value="new Product method (setDiscount), edited Order method (&quot;/revenue&quot;)" />
+    <MESSAGE value="Orders changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Orders changes" />
+  </component>
+</project>
