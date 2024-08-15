@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SmartHome
 
 ## React, JS, Vite, Java, Spring Boot, PostgreSQL
@@ -35,3 +36,6 @@ Currently, two official plugins are available:
 - [Martin Venev](https://github.com/GosuMarti)
 - [Hristo Sotirov](https://github.com/HristoSotirov)
 - [Stoyan Ivanov](https://github.com/stiv03)
+=======
+ 
+>>>>>>> 1ae31618c4f699cf0d0a0846cbd33464b2520403
